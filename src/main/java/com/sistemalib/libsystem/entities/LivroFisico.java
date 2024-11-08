@@ -1,8 +1,15 @@
 package com.sistemalib.libsystem.entities;
+import javax.persistence.Entity;
+
+@Entity
 
 public class LivroFisico extends Livro {
-    private int ISBN;
+    private String ISBN;
     private int quantidade;
+
+
+    public LivroFisico() {
+    }
 
     public LivroFisico(int ISBN, String titulo, String autor, String editora, int anoPublicacao, int quantidade, boolean disponivel) {
         super(titulo, autor, editora, anoPublicacao, disponivel);
@@ -24,5 +31,10 @@ public class LivroFisico extends Livro {
 
     public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + ", ISBN: " + isbn + ", Quantidade: " + quantidade;
     }
 }
